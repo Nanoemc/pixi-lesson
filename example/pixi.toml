@@ -2,11 +2,12 @@
 authors = ["Elise Chavez <elisechavez23@gmail.com>"]
 channels = ["conda-forge"]
 name = "example"
-platforms = ["osx-arm64"]
+platforms = ["osx-arm64", "linux-64", "win-64"]
 version = "0.1.0"
 
 [tasks]
 lab = { cmd = "jupyter lab", description = "Launch jupyter lab" }
+start = { cmd = "start", depends-on = ["lab"] }
 
 [dependencies]
 python = ">=3.13.5,<3.14"
